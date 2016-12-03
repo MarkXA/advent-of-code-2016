@@ -1,8 +1,6 @@
 ﻿module Day1
 
 open System
-open System.IO
-open System.Reflection
 open FsAlg.Generic
 
 let private rotateLeft = matrix [[0.;1.];[-1.;0.]]
