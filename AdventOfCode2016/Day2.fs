@@ -29,9 +29,9 @@ let private keypad2 =
     )
 
 let private processInput =
-    let input = Common.readInput "Day2.input.txt"
+    let input = Common.readAsLines "Day2.input.txt"
     let instructions = 
-        input.Split ([|"\r";"\n"|], StringSplitOptions.RemoveEmptyEntries)
+        input
         |> Array.map (fun s -> s.Trim().ToCharArray())
     instructions
 

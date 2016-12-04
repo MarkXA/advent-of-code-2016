@@ -3,17 +3,17 @@
 open System
 
 let private processInput1 =
-    let input = Common.readInput "Day3.input.txt"
+    let input = Common.readAsLines "Day3.input.txt"
     let triangles = 
-        input.Split ([|"\r";"\n"|], StringSplitOptions.RemoveEmptyEntries)
+        input
         |> Array.map (fun s -> s.Split ([|" "|], StringSplitOptions.RemoveEmptyEntries) |> Array.map (fun n -> int n))
         |> Array.map (fun xyz -> (xyz.[0], xyz.[1], xyz.[2]))
     triangles
 
 let private processInput2 =
-    let input = Common.readInput "Day3.input.txt"
+    let input = Common.readAsLines "Day3.input.txt"
     let triangles = 
-        input.Split ([|"\r";"\n"|], StringSplitOptions.RemoveEmptyEntries)
+        input
         |> Array.map (fun s -> s.Split ([|" "|], StringSplitOptions.RemoveEmptyEntries) |> Array.map (fun n -> int n))
         |> Array.chunkBySize 3
         |> Array.map (fun group ->

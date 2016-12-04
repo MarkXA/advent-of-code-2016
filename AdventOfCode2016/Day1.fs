@@ -7,7 +7,7 @@ let private rotateLeft = matrix [[0.;1.];[-1.;0.]]
 let private rotateRight = matrix [[0.;-1.];[1.;0.]]
 
 let private processInput =
-    let input = Common.readInput "Day1.input.txt"
+    let input = Common.readAsString "Day1.input.txt"
     let instructions =
         input.Split(',')
         |> Array.map (fun s -> s.Trim())
