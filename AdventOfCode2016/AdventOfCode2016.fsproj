@@ -64,6 +64,7 @@
     <Compile Include="Day2.fs" />
     <Compile Include="Day3.fs" />
     <Compile Include="Day4.fs" />
+    <Compile Include="Day5.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />

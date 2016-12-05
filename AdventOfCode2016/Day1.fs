@@ -36,7 +36,7 @@ let private traceForDuplicates (history, found, (location, direction)) (rotate, 
     result
 
 let private blocksAway (location:Vector<float>) =
-    Math.Abs location.[0] + Math.Abs location.[1]
+    int (Math.Abs location.[0] + Math.Abs location.[1])
 
 let part1 = 
     let instructions =
@@ -54,4 +54,4 @@ let part2 =
     let (_, found, _) = instructions |> Array.fold traceForDuplicates ([fst start], None, start)
     match found with
         | Some location -> blocksAway location
-        | None -> 0.
+        | None -> 0
