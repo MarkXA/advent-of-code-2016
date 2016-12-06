@@ -12,11 +12,7 @@ let hashIsValid (hash:array<byte>) =
     hash.[0] = 0uy && hash.[1] = 0uy && hash.[2] < 16uy
 
 let passwordIsIncomplete password =
-    let matches =
-        password
-        |> Array.filter (fun c -> c = '_')
-        |> Array.length
-    matches > 0
+    password |> Seq.exists ((=) '_')
 
 let sixthChar (hash:array<byte>) =
     hash.[2].ToString("x2").[1]
@@ -48,7 +44,7 @@ let part2 =
         |> Seq.map (fun hash -> (sixthByte hash, seventhChar hash))
         |> Seq.filter (fun (pos, _) -> pos < 8uy)
     let passwords = seq {
-        let password = [|1..8|] |> Array.map (fun _ -> '_')
+        let password = Array.create 8 '_'
         for (pos, c) in passwordPositions ->
             if password.[int pos] = '_' then Array.set password (int pos) c
             password
